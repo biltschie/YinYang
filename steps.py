@@ -11,10 +11,10 @@ class SingleStepsGraph(SingleGraph):
 
     def create_steps_graph(self):
         self.create_line(linelength=self.start_and_end_line_length, direction='right')
-        self.create_steps('up')
-        self.create_steps('down')
+        self.create_steps(self.number, self.width, self.length, 'up')
+        self.create_steps(self.number, self.width, self.length, 'down')
         self.create_line(linelength=self.distance, direction='right')
-        self.create_steps('down')
-        self.create_steps('up')
+        self.create_steps(self.number, self.width, self.length, 'down')
+        self.create_steps(self.number, self.width, self.length, 'up')
         self.create_line(linelength=self.start_and_end_line_length, direction='right')
 

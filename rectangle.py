@@ -10,11 +10,7 @@ class SingleRectangleGraph(SingleGraph):
 
     def create_rectangle_graph(self):
         self.create_line(linelength=self.start_and_end_line_length)
-        self.create_line(linelength=self.width, direction='up')
-        self.create_line(linelength=self.length, direction='right')
-        self.create_line(linelength=self.width, direction='down')
+        self.create_rectangle(self.width, self.length, direction='up')
         self.create_line(linelength=self.distance)
-        self.create_line(linelength=self.width, direction='down')
-        self.create_line(linelength=self.length, direction='right')
-        self.create_line(linelength=self.width, direction='up')
+        self.create_rectangle(self.width, self.length, direction='down')
         self.create_line(linelength=self.start_and_end_line_length)

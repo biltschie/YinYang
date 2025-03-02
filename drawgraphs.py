@@ -63,20 +63,24 @@ def create_hybrid_graphs():
     nrows = 2 
     ncolumns = 4
     axes = set_up(nrows, ncolumns)
-    constant_length = 5
-    constant_width = 5
+    constant_length_steps = 5
+    constant_width_steps = 5
+    constant_length_rectangle = 12
+    constant_width_rectangle = 8
     constant_no_of_steps = 5
     constant_radius = 10
     constant_distance = 20
-    random_lengths = random.sample(list(range(2, 8)), ncolumns)
-    random_widths = random.sample(list(range(2, 8)), ncolumns)
+    random_lengths_rectangle = random.sample(list(range(14, 24)), ncolumns)
+    random_widths_rectangle = random.sample(list(range(7, 12)), ncolumns)
+    random_lengths_steps = random.sample(list(range(2, 6)), ncolumns)
+    random_widths_steps = random.sample(list(range(2, 6)), ncolumns)
     random_no_of_steps = random.sample(list(range(1, 6)), ncolumns)
     random_radii = random.sample(list(range(5, 20, 3)), ncolumns)
     random_distances = random.sample(list(range(5, 74, 20)), ncolumns)
     
     for i in range(ncolumns):
-        SingleGraph(axes[0,i]).create_hybrid_graphs(random_lengths[i], random_widths[i], random_no_of_steps[i], random_radii[i], constant_distance)
-        SingleGraph(axes[1,i]).create_hybrid_graphs(constant_length, constant_width, constant_no_of_steps, constant_radius, random_distances[i])
+        SingleGraph(axes[0,i]).create_hybrid_graph(random_lengths_rectangle[i], random_widths_rectangle[i], random_lengths_steps[i], random_widths_steps[i], random_no_of_steps[i], random_radii[i], constant_distance)
+        SingleGraph(axes[1,i]).create_hybrid_graph(constant_length_rectangle, constant_width_rectangle, constant_length_steps, constant_width_steps, constant_no_of_steps, constant_radius, random_distances[i])
     plt.show()
 
 
